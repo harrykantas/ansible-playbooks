@@ -1,4 +1,4 @@
 ---
 
 dependencies:
-  - { role: kernel }
+  - role: grub/handlers

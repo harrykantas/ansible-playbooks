@@ -1,3 +1,5 @@
+---
+
 - name: restart systemd-resolved
   systemd:
     name: systemd-resolved

@@ -5,3 +5,4 @@
     repo: "{{ user.dotfiles.repo }}"
     dest: /home/{{ user.name }}
     separate_git_dir: "{{ user.dotfiles.git_dir }}"
+  when: install_dotfiles is defined

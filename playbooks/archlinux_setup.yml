@@ -6,7 +6,6 @@
 
   roles:
     - { role: ../roles/archlinux/setup }
-    - { role: ../roles/archlinux/grub }
     - { role: ../roles/archlinux/kernel }
     - { role: ../roles/archlinux/pacman }
     - { role: ../roles/archlinux/nextdns, when: "'ultraviolet' in inventory_hostname" }

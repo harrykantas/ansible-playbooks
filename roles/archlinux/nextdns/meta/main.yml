@@ -1,4 +1,4 @@
 ---
 
 dependencies:
-  - { role: setup }
+  - role: setup/handlers
