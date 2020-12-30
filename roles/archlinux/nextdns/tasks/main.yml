@@ -1,0 +1,8 @@
+---
+
+- name: push nextdns config
+  template:
+    src: 20-nextdns.conf.j2
+    dest: /etc/systemd/resolved.conf.d/
+  notify:
+    - restart systemd-resolved

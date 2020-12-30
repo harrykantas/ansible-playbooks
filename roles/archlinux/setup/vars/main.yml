@@ -1,0 +1,16 @@
+base_packages:
+  - base-devel
+  - openssh
+  - fish
+  - htop
+  - nmap
+  - curl
+  - tmux
+  - git
+  - rsync
+  - coreutils
+  - dateutils
+  - bc
+  - strace
+  - lsof
+  - neovim

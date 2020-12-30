@@ -1,0 +1,8 @@
+---
+
+- name: disable mdns in systemd-resolved
+  copy:
+    src: 10-disable_mdns.conf
+    dest: /etc/systemd/resolved.conf.d/
+  notify:
+    - restart systemd-resolved

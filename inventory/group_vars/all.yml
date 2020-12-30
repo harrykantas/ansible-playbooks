@@ -1,0 +1,6 @@
+user:
+  name: harry
+  email: harrykantas@gmail.com
+  dotfiles: 
+    repo: https://github.com/harrykantas/dotfiles
+    git_dir: /home/harry/Projects/dotfiles

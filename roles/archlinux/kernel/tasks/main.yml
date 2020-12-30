@@ -1,0 +1,9 @@
+---
+
+- name: push mkinitcpio.conf and generate initramfs
+  template:
+    src: mkinitcpio.conf.j2
+    dest: /etc/mkinitcpio.conf
+  when: gpu is defined
+  notify:
+    - generate initramfs

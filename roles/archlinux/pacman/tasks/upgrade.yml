@@ -1,0 +1,10 @@
+---
+
+- name: run pacman -Syu
+  pacman:
+    update_cache: yes
+    upgrade: yes
+  register: task_result
+  until: task_result is success
+  retries: 2
+  delay: 2

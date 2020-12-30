@@ -1,0 +1,25 @@
+---
+
+- name: install acpid
+  pacman:
+    name: "acpid"
+  register: task_result
+  until: task_result is success
+  retries: 2
+  delay: 2
+
+- name: acpid events config
+  copy:
+    src: events
+    dest: /etc/acpi/
+
+- name: acpid handlers config
+  copy:
+    src: handlers
+    dest: /etc/acpi/
+
+- name: enable and start acpid
+  systemd:
+    name: acpid
+    enabled: yes
+    state: started

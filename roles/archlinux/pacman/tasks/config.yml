@@ -1,0 +1,6 @@
+---
+
+- name: copy pacman.conf
+  copy:
+    src: pacman.conf
+    dest: /etc/

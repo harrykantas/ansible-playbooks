@@ -1,0 +1,3 @@
+cpu: intel
+gpu: i915
+kernel_params: "msr.allow_writes=on intremap=no_x2apic_optout pci=realloc intel_iommu=off"
