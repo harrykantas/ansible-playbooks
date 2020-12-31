@@ -2,17 +2,17 @@
 
 - name: clone the yay repo
   git:
-    repo: "{{ yay_repo }}"
-    dest: "{{ yay_dest }}"
+    repo: "{{yay_repo}}"
+    dest: "{{yay_dest}}"
 
-- name: check that {{ yay_dest }} exists
+- name: check that {{yay_dest}} exists
   stat:
-    path: "{{ yay_dest }}"
+    path: "{{yay_dest}}"
   register: yay_dir
 
 - name: install yay
   become: yes
   command: 
     cmd: "makepkg -si"
-    chdir: "{{ yay_dest }}"
+    chdir: "{{yay_dest}}"
   when: yay_dir.stat.isdir is defined and yay_dir.stat.isdir

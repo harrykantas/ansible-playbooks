@@ -5,7 +5,7 @@ nextdns_id: !vault |
           31306364393734393531643933666430666339643230646433393630613735616565343661653138
           6133313733366339620a616633376562643466306438356436633634633032636266383863616536
           6431
-dns1_v4: "45.90.28.0#{{ inventory_hostname }}-{{ nextdns_id }}.dns1.nextdns.io"
-dns2_v4: "45.90.30.0#{{ inventory_hostname }}-{{ nextdns_id }}.dns2.nextdns.io"
-dns1_v6: "2a07:a8c0::#{{ inventory_hostname }}-{{ nextdns_id }}.dns1.nextdns.io"
-dns2_v6: "2a07:a8c1::#{{ inventory_hostname }}-{{ nextdns_id }}.dns2.nextdns.io"
+dns1_v4: "45.90.28.0#{{inventory_hostname}}-{{nextdns_id}}.dns1.nextdns.io"
+dns2_v4: "45.90.30.0#{{inventory_hostname}}-{{nextdns_id}}.dns2.nextdns.io"
+dns1_v6: "2a07:a8c0::#{{inventory_hostname}}-{{nextdns_id}}.dns1.nextdns.io"
+dns2_v6: "2a07:a8c1::#{{inventory_hostname}}-{{nextdns_id}}.dns2.nextdns.io"

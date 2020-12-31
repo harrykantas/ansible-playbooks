@@ -1,15 +1,15 @@
 # MODULES
 {% if gpu == "i915" %} 
-MODULES=({{ initrd_modules }} i915 intel_lpss_pci)
+MODULES=({{initrd_modules}} i915 intel_lpss_pci)
 {% else %}
-MODULES=({{ initrd_modules }})
+MODULES=({{initrd_modules}})
 {% endif %}
 
 # BINARIES
-BINARIES=({{ initrd_bin }})
+BINARIES=({{initrd_bin}})
 
 # FILES
-FILES=({{ initrd_files }})
+FILES=({{initrd_files}})
 
 # HOOKS
-HOOKS=({{ initrd_hooks }})
+HOOKS=({{initrd_hooks}})

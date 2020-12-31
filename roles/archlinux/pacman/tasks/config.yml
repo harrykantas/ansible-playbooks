@@ -1,6 +1,11 @@
 ---
 
-- name: copy pacman.conf
-  copy:
-    src: pacman.conf
-    dest: /etc/
+- name: edit pacman.conf
+  become: yes
+  lineinfile:
+    path: /etc/pacman.conf
+    regexp: ^#({{item}})
+    line: \1
+  with_items:
+    - "Color"
+    - "VerbosePkgLists"
