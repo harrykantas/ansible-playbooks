@@ -3,8 +3,16 @@
 - name: clone the yay repo
   git:
     repo: "{{ yay_repo }}"
-    dest: /home/{{ user.name }}/yay
+    dest: "{{ yay_dest }}"
+
+- name: check that {{ yay_dest }} exists
+  stat:
+    path: "{{ yay_dest }}"
+  register: yay_dir
 
 - name: install yay
-  command: "cd /home/{{ user.name }}/yay && makepkg -si"
   become: yes
+  command: 
+    cmd: "makepkg -si"
+    chdir: "{{ yay_dest }}"
+  when: yay_dir.stat.isdir is defined and yay_dir.stat.isdir
