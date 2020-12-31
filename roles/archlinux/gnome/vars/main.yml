@@ -1,0 +1,34 @@
+packages:
+  pacman:
+    - gdm
+    - networkmanager
+    - gnome-backgrounds
+    - gnome-calculator
+    - gnome-characters
+    - gnome-clocks
+    - gnome-color-manager
+    - gnome-control-center
+    - gnome-disk-utility
+    - gnome-keyring
+    - gnome-logs
+    - gnome-menus
+    - gnome-power-manager
+    - gnome-screenshot
+    - gnome-session
+    - gnome-settings-daemon
+    - gnome-shell
+    - gnome-shell-extensions
+    - gnome-software
+    - gnome-system-monitor
+    - gnome-terminal
+    - gnome-themes-extra
+    - gnome-tweaks
+    - gnome-usage
+    - gnome-user-share
+    - gnome-video-effects
+    - gnome-weather
+  aur:
+    - gnome-shell-extension-drop-down-terminal-x
+    - gnome-shell-extension-dynamic-top-bar-git
+    - gnome-shell-extension-extended-gestures-git
+    - gnome-shell-extension-remove-dropdown-arrows
