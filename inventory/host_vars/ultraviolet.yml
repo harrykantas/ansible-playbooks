@@ -1,4 +1,21 @@
 cpu: intel
 gpu: i915
-kernel_params: "msr.allow_writes=on intremap=no_x2apic_optout pci=realloc intel_iommu=off"
-install_dotfiles:
+
+kernel:
+  params: "msr.allow_writes=on intremap=no_x2apic_optout pci=realloc intel_iommu=off"
+
+modules:
+  - blacklist:
+    - "blacklist ideapad_laptop"
+    - "blacklist pcspkr"
+    - "blacklist i2c_i801"
+    - "blacklist snd_hda_intel"
+    - "blacklist snd_soc_skl"
+  - i915:
+    - "options i915 enable_guc=-1"
+  - iwlwifi:
+    - "options iwlwifi power_save=1"
+    - "options iwlmvm power_scheme=3"
+
+install:
+  - dotfiles
