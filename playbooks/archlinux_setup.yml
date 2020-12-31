@@ -2,7 +2,7 @@
 
 - name: archlinux initial setup
   hosts: archlinux
-  become: True
+  become: yes
 
   roles:
     - { role: ../roles/archlinux/setup }

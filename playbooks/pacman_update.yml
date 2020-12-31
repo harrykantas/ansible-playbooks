@@ -1,9 +1,0 @@
-- name: All hosts up-to-date
-  hosts: archlinux
-  become: yes
-  
-  tasks:
-    - name: Run the equivalent of "pacman -Syu"
-      community.general.pacman:
-        update_cache: yes
-        upgrade: yes

@@ -1,0 +1,10 @@
+---
+
+- name: clone the yay repo
+  git:
+    repo: "{{ yay_repo }}"
+    dest: /home/{{ user.name }}/yay
+
+- name: install yay
+  command: "cd /home/{{ user.name }}/yay && makepkg -si"
+  become: yes

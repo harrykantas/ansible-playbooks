@@ -1,0 +1,11 @@
+---
+
+- name: run pacman -Syu on all hosts
+  hosts: archlinux
+  become: yes
+  
+  tasks:
+    - name: run pacman -Syu
+      pacman:
+        update_cache: yes
+        upgrade: yes
