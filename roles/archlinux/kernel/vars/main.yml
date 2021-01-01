@@ -1,4 +1,0 @@
-initrd_modules: ""
-initrd_bin: ""
-initrd_files: ""
-initrd_hooks: "base udev autodetect modconf block filesystems keyboard resume fsck"

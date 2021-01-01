@@ -1,0 +1,12 @@
+---
+
+- name: acpid config
+  become: yes
+  copy:
+    src: "{{item}}"
+    dest: /etc/acpi/
+  with_items:
+    - events
+    - handlers
+  notify:
+    - restart acpid

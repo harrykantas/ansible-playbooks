@@ -8,6 +8,7 @@
     - { role: ../roles/archlinux/setup }
     - { role: ../roles/archlinux/kernel }
     - { role: ../roles/archlinux/pacman }
+    - { role: ../roles/archlinux/grub, when: install.grub is defined }
     - { role: ../roles/archlinux/acpid, when: "install.acpid is defined" }    
     - { role: ../roles/archlinux/nextdns, when: "install.nextdns is defined" }
     - { role: ../roles/archlinux/dotfiles, when: "install.dotfiles is defined" }

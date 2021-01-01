@@ -3,6 +3,7 @@ gpu: i915
 
 kernel:
   params: "msr.allow_writes=on intremap=no_x2apic_optout pci=realloc intel_iommu=off"
+  modules: "i915 intel_lpss_pci thinkpad_acpi"
 
 modules:
   - blacklist:
@@ -18,6 +19,7 @@ modules:
     - "options iwlmvm power_scheme=3"
 
 install:
+  grub:
   acpid:
   dotfiles:
   gnome:
