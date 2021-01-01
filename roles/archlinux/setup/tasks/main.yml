@@ -2,4 +2,3 @@
 
 - import_tasks: microcode.yml
 - import_tasks: base.yml
-- import_tasks: resolved.yml
