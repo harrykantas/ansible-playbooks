@@ -8,5 +8,6 @@
   with_items:
     - events
     - handlers
+  register: systemd_item=acpid
   notify:
     - restart acpid
