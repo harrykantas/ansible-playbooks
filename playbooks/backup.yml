@@ -1,0 +1,7 @@
+---
+
+- name: backup ssh configs
+  hosts: all
+
+  roles:
+    - role: roles/ssh
