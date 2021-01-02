@@ -2,7 +2,7 @@
 
 - name: edit pacman.conf
   become: yes
-  lineinfile:
+  ansible.builtin.lineinfile:
     path: /etc/pacman.conf
     regexp: ^#({{item}})
     line: \1

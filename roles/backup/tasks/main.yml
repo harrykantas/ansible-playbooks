@@ -2,7 +2,7 @@
 
 - name: copy ssh config from a local SMB share
   become: yes
-  command: "{{item}}"
+  ansible.builtin.command: "{{item}}"
   with_items:
     - mount -t cifs //{{ssh.backup_host}}/{{ssh.backup_share}} {{ssh.backup_mount_point}} -o "username=*,password="
     - rsync -a {{ssh.backup_mount_point}}/{{ssh.backup_path}}/ /home/{{user.name}}/.ssh/
@@ -10,7 +10,7 @@
 
 - name: copy ssh config to a local SMB share
   become: yes
-  command: "{{item}}"
+  ansible.builtin.command: "{{item}}"
   with_items:
     - mount -t cifs //{{ssh.backup_host}}/{{ssh.backup_share}} {{ssh.backup_mount_point}} -o "username=*,password="
     - rsync -a /home/{{user.name}}/.ssh/ {{ssh.backup_mount_point}}/{{ssh.backup_path}}/

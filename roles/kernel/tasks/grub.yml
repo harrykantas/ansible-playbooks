@@ -2,7 +2,7 @@
 
 - name: config grub
   become: yes
-  lineinfile:
+  ansible.builtin.lineinfile:
     path: /etc/default/grub
     regex: "{{item.from}}"
     line: "{{item.to}}"

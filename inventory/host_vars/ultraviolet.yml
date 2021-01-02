@@ -1,5 +1,4 @@
 cpu: intel
-gpu: i915
 
 kernel:
   params: "msr.allow_writes=on intremap=no_x2apic_optout pci=realloc intel_iommu=off"
@@ -16,6 +15,15 @@ modules:
     - "options i915 enable_guc=-1"
     - "options iwlwifi power_save=1"
     - "options iwlmvm power_scheme=3"
+    - "options thinkpad_acpi experimental=1"
+
+env_vars:
+  - "LIBVA_DRIVER_NAME=iHD"
+  - "CLUTTER_BACKEND=wayland"
+  - "QT_QPA_PLATFORM=wayland"
+  - "SDL_VIDEODRIVER=wayland"
+  - "MOZ_ENABLE_WAYLAND=1"
+  - "MOZ_USE_XINPUT2=1"
 
 install:
   grub:

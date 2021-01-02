@@ -1,18 +1,18 @@
 ---
 
 - name: clone the yay repo
-  git:
+  ansible.builtin.git:
     repo: "{{yay_repo}}"
     dest: "{{yay_dest}}"
 
 - name: check that {{yay_dest}} exists
-  stat:
+  ansible.builtin.stat:
     path: "{{yay_dest}}"
   register: yay_dir
 
 - name: install yay
   become: yes
-  command: 
+  ansible.builtin.command: 
     cmd: "makepkg -si"
     chdir: "{{yay_dest}}"
   when: yay_dir.stat.isdir is defined and yay_dir.stat.isdir

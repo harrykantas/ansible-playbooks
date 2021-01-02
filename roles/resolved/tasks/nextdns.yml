@@ -2,7 +2,7 @@
 
 - name: push nextdns config
   become: yes
-  template:
+  ansible.builtin.template:
     src: 20-nextdns.conf.j2
     dest: /etc/systemd/resolved.conf.d/
   notify:

@@ -1,7 +1,7 @@
 ---
 
 - name: install base packages
-  pacman:
+  community.general.pacman:
     name: "{{base_packages}}"
     state: present
   register: task_result

@@ -4,7 +4,7 @@
 - import_tasks: yay.yml
 
 - name: run pacman -Syu
-  pacman:
+  community.general.pacman:
     update_cache: yes
     upgrade: yes
   tags:
@@ -13,7 +13,7 @@
 
 - name: run yay -Syu
   become: yes
-  command: "yay --answerclean n --answerdiff n --answeredit n --answerupgrade n -Syu"
+  ansible.builtin.command: "yay --answerclean n --answerdiff n --answeredit n --answerupgrade n -Syu"
   tags: 
     - never
     - yay

@@ -2,7 +2,7 @@
 
 - name: acpid config
   become: yes
-  copy:
+  ansible.builtin.copy:
     src: "{{item}}"
     dest: /etc/acpi/
   loop:

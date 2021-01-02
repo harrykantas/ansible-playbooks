@@ -1,7 +1,7 @@
 ---
 
 - name: clone the dotfiles repo
-  git:
+  ansible.builtin.git:
     repo: "{{user.dotfiles.repo}}"
     dest: /home/{{user.name}}
     separate_git_dir: "{{user.dotfiles.git_dir}}"

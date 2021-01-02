@@ -2,4 +2,4 @@
 
 - name: generate initramfs
   become: yes
-  command: "mkinitcpio -p linux"
+  ansible.builtin.command: "mkinitcpio -p linux"
