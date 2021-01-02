@@ -3,10 +3,10 @@ Ansible Playbooks
 
 ## Setting up Arch Linux after a fresh install
 ```
-ansible-playbook playbooks/archlinux_setup.yml -kK --ask-vault-pass
+ansible-playbook -l <hostname> -kK --ask-vault-pass playbooks/archlinux_setup.yml
 ```
 
-## Updating all packages with yay
+## Updating the system with yay
 ```
-ANSIBLE_STDOUT_CALLBACK=debug ansible-playbook playbooks/archlinux_update.yml -kK --tags yay
+ansible-playbook -l <hostname> -kK --tags yay playbooks/archlinux_update.yml
 ```

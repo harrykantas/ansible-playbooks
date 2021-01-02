@@ -4,4 +4,4 @@
   hosts: archlinux
 
   roles:
-    - role: ../roles/archlinux/pacman
+    - role: roles/pacman
