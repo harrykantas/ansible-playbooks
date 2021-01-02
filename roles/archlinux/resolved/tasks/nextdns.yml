@@ -7,3 +7,4 @@
     dest: /etc/systemd/resolved.conf.d/
   notify:
     - restart systemd-resolved
+  when: install.nextdns is defined

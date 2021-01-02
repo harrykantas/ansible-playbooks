@@ -1,5 +1,15 @@
 ---
 
+- name: enable acpid
+  systemd:
+    name: acpid
+    enabled: yes
+
+- name: start acpid
+  systemd:
+    name: acpid
+    enabled: yes
+
 - name: restart acpid
   systemd:
     name: acpid

@@ -7,9 +7,7 @@
   until: task_result is success
   retries: 2
   delay: 2
+  notify:
+    - enable acpid
+    - start acpid
 
-- name: enable and start acpid
-  systemd:
-    name: acpid
-    enabled: yes
-    state: started
