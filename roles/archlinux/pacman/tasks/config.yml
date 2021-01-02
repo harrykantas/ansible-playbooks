@@ -6,6 +6,6 @@
     path: /etc/pacman.conf
     regexp: ^#({{item}})
     line: \1
-  with_items:
+  loop:
     - "Color"
     - "VerbosePkgLists"

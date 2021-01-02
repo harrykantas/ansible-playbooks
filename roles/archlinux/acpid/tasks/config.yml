@@ -5,7 +5,7 @@
   copy:
     src: "{{item}}"
     dest: /etc/acpi/
-  with_items:
+  loop:
     - events
     - handlers
   notify:
