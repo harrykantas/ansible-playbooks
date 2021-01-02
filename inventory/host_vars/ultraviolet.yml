@@ -6,15 +6,14 @@ kernel:
   modules: "i915 intel_lpss_pci thinkpad_acpi"
 
 modules:
-  - blacklist:
+  blacklist:
     - "blacklist ideapad_laptop"
     - "blacklist pcspkr"
     - "blacklist i2c_i801"
     - "blacklist snd_hda_intel"
     - "blacklist snd_soc_skl"
-  - i915:
+  options:
     - "options i915 enable_guc=-1"
-  - iwlwifi:
     - "options iwlwifi power_save=1"
     - "options iwlmvm power_scheme=3"
 

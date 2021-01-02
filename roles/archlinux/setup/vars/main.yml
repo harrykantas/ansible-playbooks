@@ -14,3 +14,4 @@ base_packages:
   - strace
   - lsof
   - neovim
+  - tree

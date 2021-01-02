@@ -1,28 +1,5 @@
 ---
 
-- name: config mkinitcpio.conf
-  become: yes
-  lineinfile:
-    path: /etc/mkinitcpio.conf
-    regex: "{{item.from}}"
-    line: "{{item.to}}"
-  with_items:
-    - {from: "MODULES()", to: "MODULES({{kernel.modules}})"}
-  when: kernel.modules is defined
-  notify:
-    - generate initramfs
-
-- name: config grub
-  become: yes
-  lineinfile:
-    path: /etc/default/grub
-    regex: "{{item.from}}"
-    line: "{{item.to}}"
-  with_items:
-    - {from: ^GRUB_CMDLINE_LINUX, to: 'GRUB_CMDLINE_LINUX=\"{{kernel.params}}\"'}
-    - {from: ^"GRUB_TIMEOUT=5", to: "GRUB_TIMEOUT=1"}
-    - {from: ^#GRUB_COLOR_NORMAL, to: GRUB_COLOR_NORMAL}
-    - {from: ^#GRUB_COLOR_HIGHLIGHT, to: GRUB_COLOR_HIGHLIGHT}
-  when: kernel.params is defined
-  notify:
-    - update grub
+- import_tasks: grub.yml
+- import_tasks: mkinitcpio.yml
+- import_tasks: modprobe.yml

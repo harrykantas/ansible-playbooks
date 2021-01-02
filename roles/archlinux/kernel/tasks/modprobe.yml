@@ -1,0 +1,19 @@
+---
+
+- name: create modprobe.d/blacklist.conf
+  become: yes
+  copy:
+    content: "{{item}}"
+    dest: /etc/modprobe.d/blacklist.conf
+  loop:
+    - "{{modules.blacklist}}"
+  when: modules.blacklist is defined
+
+- name: create modprobe.d/options.conf
+  become: yes
+  copy:
+    content: "{{item}}"
+    dest: /etc/modprobe.d/options.conf
+  loop:
+    - "{{modules.options}}"
+  when: modules.options is defined

@@ -1,0 +1,13 @@
+---
+
+- name: config mkinitcpio.conf
+  become: yes
+  lineinfile:
+    path: /etc/mkinitcpio.conf
+    regex: "{{item.from}}"
+    line: "{{item.to}}"
+  with_items:
+    - {from: "MODULES()", to: "MODULES({{kernel.modules}})"}
+  when: kernel.modules is defined
+  notify:
+    - generate initramfs
