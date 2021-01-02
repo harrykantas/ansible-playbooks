@@ -1,0 +1,7 @@
+---
+
+- name: update packages on all hosts
+  hosts: archlinux
+
+  roles:
+    - role: ../roles/archlinux/pacman

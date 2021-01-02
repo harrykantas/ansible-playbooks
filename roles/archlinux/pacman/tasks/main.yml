@@ -2,3 +2,18 @@
 
 - import_tasks: config.yml
 - import_tasks: yay.yml
+
+- name: run pacman -Syu
+  pacman:
+    update_cache: yes
+    upgrade: yes
+  tags:
+    - never
+    - pacman
+
+- name: run yay -Syu
+  become: yes
+  command: "yay --answerclean n --answerdiff n --answeredit n --answerupgrade n -Syu"
+  tags: 
+    - never
+    - yay
