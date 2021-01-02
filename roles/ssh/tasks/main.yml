@@ -1,0 +1,20 @@
+---
+
+- name: copy ssh config from local SMB share
+  become: yes
+  command: "{{item}}"
+  with_items:
+    - mount -t cifs //{{ssh.backup_host}}/{{ssh.backup_share}} {{ssh.backup_mount_point}} -o "username=*,password="
+    - rsync -a {{ssh.backup_mount_point}}/{{ssh.backup_path}}/ /home/{{user.name}}/.ssh/
+    - umount {{ssh.backup_mount_point}}
+
+- name: copy ssh config to local SMB share
+  become: yes
+  command: "{{item}}"
+  with_items:
+    - mount -t cifs //{{ssh.backup_host}}/{{ssh.backup_share}} {{ssh.backup_mount_point}} -o "username=*,password="
+    - rsync -a /home/{{user.name}}/.ssh/ {{ssh.backup_mount_point}}/{{ssh.backup_path}}/
+    - umount {{ssh.backup_mount_point}}
+  tags:
+    - never
+    - backup
