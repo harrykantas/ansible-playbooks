@@ -18,7 +18,7 @@
     - role: roles/dotfiles
       when: install.dotfiles is defined
 
-    - role: roles/ssh
+    - role: roles/backup
 
     - role: roles/gnome
       when: install.gnome is defined

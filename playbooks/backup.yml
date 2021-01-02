@@ -1,7 +1,7 @@
 ---
 
-- name: backup ssh configs
+- name: backup SSH configs locally
   hosts: all
 
   roles:
-    - role: roles/ssh
+    - role: roles/backup
