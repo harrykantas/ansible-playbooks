@@ -1,6 +1,7 @@
 ---
 
 - name: install {{cpu}}-ucode and update grub
+  become: yes
   community.general.pacman:
     name: "{{cpu}}-ucode"
   when: cpu is defined
