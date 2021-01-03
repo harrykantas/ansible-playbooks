@@ -11,6 +11,7 @@ base_packages:
   - coreutils
   - dateutils
   - bc
+  - rsync
   - strace
   - lsof
   - neovim

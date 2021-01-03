@@ -6,9 +6,9 @@ Ansible Playbooks
 ansible-playbook [-l <hostname>] -kK --ask-vault-pass playbooks/archlinux_setup.yml
 ```
 
-## Update the system(s) with yay
+## Update the system(s) with pacman and yay
 ```
-ansible-playbook [-l <hostname>] -kK playbooks/archlinux_update.yml --tags yay
+ansible-playbook [-l <hostname>] -kK playbooks/archlinux_update.yml --tags update_packages
 ```
 
 ## Backup SSH configs to a local SMB share

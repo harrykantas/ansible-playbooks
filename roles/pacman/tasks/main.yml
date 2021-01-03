@@ -3,17 +3,17 @@
 - import_tasks: config.yml
 - import_tasks: yay.yml
 
-- name: run pacman -Syu
+- name: update packages
   community.general.pacman:
     update_cache: yes
     upgrade: yes
   tags:
     - never
-    - pacman
+    - update_packages
 
-- name: run yay -Syu
+- name: update AUR packages
   become: yes
-  ansible.builtin.command: "yay --answerclean n --answerdiff n --answeredit n --answerupgrade n -Syu"
+  ansible.builtin.command: "yay --answerclean n --answerdiff n --answeredit n --answerupgrade n --aur -Syu"
   tags: 
     - never
-    - yay
+    - update_packages
