@@ -29,6 +29,7 @@ install:
   grub:
   acpid:
   sysctl:
+  udev:
   dotfiles:
   gnome:
   nextdns:
