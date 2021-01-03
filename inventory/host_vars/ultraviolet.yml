@@ -28,6 +28,7 @@ env_vars:
 install:
   grub:
   acpid:
+  sysctl:
   dotfiles:
   gnome:
   nextdns:
