@@ -1,0 +1,8 @@
+---
+
+- name: udev config
+  become: yes
+  ansible.builtin.copy:
+    src: udev/
+    dest: /etc/udev/rules.d/
+  when: install.udev is defined

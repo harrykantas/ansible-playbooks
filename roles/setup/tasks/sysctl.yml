@@ -3,10 +3,6 @@
 - name: sysctl config
   become: yes
   ansible.builtin.copy:
-    src: "{{item}}"
+    src: sysctl/
     dest: /etc/systctl.d/
-  loop:
-    - 99-swappiness.conf
-    - dirty.conf
-    - disable_watchdog.conf
-  where: install.sysctl is defined
+  when: install.sysctl is defined
