@@ -4,6 +4,9 @@ kernel:
   params: "msr.allow_writes=on intremap=no_x2apic_optout pci=realloc intel_iommu=off"
   modules: "i915 intel_lpss_pci thinkpad_acpi"
 
+fonts:
+  vconsole: ter-i18n
+
 modules:
   blacklist:
     - "blacklist ideapad_laptop"
