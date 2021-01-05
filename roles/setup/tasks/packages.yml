@@ -1,0 +1,22 @@
+---
+
+- name: install base packages
+  become: yes
+  community.general.pacman:
+    name: "{{base_packages}}"
+    state: present
+  register: task_result
+  until: task_result is success
+  retries: 2
+  delay: 2
+
+- name: install extra packages
+  become: yes
+  community.general.pacman:
+    name: "{{install.extra_packages}}"
+    state: present
+  register: task_result
+  until: task_result is success
+  retries: 2
+  delay: 2
+  when: install.extra_packages is defined

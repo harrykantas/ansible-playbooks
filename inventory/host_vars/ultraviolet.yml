@@ -36,3 +36,5 @@ install:
   dotfiles:
   gnome:
   nextdns:
+  extra_packages:
+    - acpi_call

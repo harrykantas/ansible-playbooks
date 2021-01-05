@@ -1,8 +1,8 @@
 ---
 
+- import_tasks: packages.yml
 - import_tasks: microcode.yml
-- import_tasks: base.yml
 - import_tasks: env.yml
-- import_tasks: vconsole.yml
 - import_tasks: sysctl.yml
 - import_tasks: udev.yml
+- import_tasks: vconsole.yml

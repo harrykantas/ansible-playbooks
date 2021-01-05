@@ -16,3 +16,4 @@ base_packages:
   - lsof
   - neovim
   - tree
+  - terminus-font
