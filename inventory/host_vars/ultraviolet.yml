@@ -1,7 +1,7 @@
 cpu: intel
 
 kernel:
-  params: "msr.allow_writes=on intremap=no_x2apic_optout pci=realloc intel_iommu=off"
+  params: "acpi_os_name=\"Windows 2015\" msr.allow_writes=on intremap=no_x2apic_optout pci=realloc intel_iommu=off"
   modules: "i915 intel_lpss_pci thinkpad_acpi"
 
 fonts:
@@ -36,5 +36,6 @@ install:
   dotfiles:
   gnome:
   nextdns_client:
+  flexo_client:
   extra_packages:
     - acpi_call

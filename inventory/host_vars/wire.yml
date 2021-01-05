@@ -1,3 +1,4 @@
 install:
   dotfiles:
   nextdns_server:
+  flexo_server:

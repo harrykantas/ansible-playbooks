@@ -1,7 +1,7 @@
 ---
 
-- import_tasks: nextdns_client.yml
+- import_tasks: client.yml
   when: install.nextdns_client is defined
 
-- import_tasks: nextdns_server.yml
+- import_tasks: server.yml
   when: install.nextdns_server is defined

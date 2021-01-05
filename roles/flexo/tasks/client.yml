@@ -1,0 +1,12 @@
+---
+
+- name: config flexo client
+  become: yes
+  ansible.builtin.lineinfile:
+    path: /etc/pacman.d/mirrorlist
+    insertbefore: BOF
+    line: "{{item}}"
+  loop:
+    - "##"
+    - "Server = http://{{flexo.server}}:7878/$repo/os/$arch"
+    - ""

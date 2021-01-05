@@ -1,0 +1,16 @@
+---
+
+- name: install flexo from aur
+  become: yes
+  ansible.builtin.command: "yay --answerclean n --answerdiff n --answeredit n --answerupgrade n --aur -S flexo-git"
+  notify: enable and start flexo
+
+- name: create systemd timer to run paccache
+  become: yes
+  ansible.builtin.copy:
+    src: "{{item}}"
+    dest: /etc/systemd/system/
+  loop:
+    - sched-paccache.timer
+    - sched-paccache.service
+  notify: enable and start sched-paccache.timer

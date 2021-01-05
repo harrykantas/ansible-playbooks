@@ -16,6 +16,8 @@
 
     - role: roles/nextdns
 
+    - role: roles/flexo
+
     - role: roles/dotfiles
       when: install.dotfiles is defined
 

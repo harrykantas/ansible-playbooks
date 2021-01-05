@@ -11,6 +11,10 @@ ssh:
   backup_mount_point: /mnt
   backup_path: ssh
 
+flexo:
+  server: 192.168.1.30
+
+
 nextdns:
   id: !vault |
               $ANSIBLE_VAULT;1.1;AES256

@@ -17,3 +17,4 @@ base_packages:
   - neovim
   - tree
   - terminus-font
+  - pacman-contrib

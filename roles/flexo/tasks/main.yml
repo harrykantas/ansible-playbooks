@@ -1,0 +1,7 @@
+---
+
+- import_tasks: server.yml
+  when: install.flexo_server is defined
+
+- import_tasks: client.yml
+  when: install.flexo_client is defined
