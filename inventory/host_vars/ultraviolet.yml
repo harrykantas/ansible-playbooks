@@ -35,6 +35,6 @@ install:
   udev:
   dotfiles:
   gnome:
-  nextdns:
+  nextdns_client:
   extra_packages:
     - acpi_call

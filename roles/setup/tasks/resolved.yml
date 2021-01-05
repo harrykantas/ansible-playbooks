@@ -1,0 +1,9 @@
+---
+
+- name: disable mdns in systemd-resolved
+  become: yes
+  ansible.builtin.copy:
+    src: resolved/10-disable_mdns.conf
+    dest: /etc/systemd/resolved.conf.d/
+  notify:
+    - restart systemd-resolved

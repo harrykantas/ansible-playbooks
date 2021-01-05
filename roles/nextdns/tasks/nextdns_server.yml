@@ -1,0 +1,14 @@
+---
+
+- name: install nextdns from aur
+  become: yes
+  ansible.builtin.command: "yay --answerclean n --answerdiff n --answeredit n --answerupgrade n --aur -S nextdns"
+
+- name: setup nextdns server
+  become: yes
+  ansible.builtin.command: "nextdns install -config {{nextdns.id}} -report-client-info -setup-router"
+
+- name: configure nextdns server
+  become: yes
+  ansible.builtin.command: "nextdns config set -cache-size=10MB -max-ttl=5s"
+  notify: restart nextdns

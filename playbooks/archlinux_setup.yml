@@ -7,13 +7,14 @@
     - role: roles/setup
     - role: roles/kernel
     - role: roles/pacman
-    - role: roles/resolved
 
     - role: roles/grub
       when: install.grub is defined
 
     - role: roles/acpid
       when: install.acpid is defined
+
+    - role: roles/nextdns
 
     - role: roles/dotfiles
       when: install.dotfiles is defined

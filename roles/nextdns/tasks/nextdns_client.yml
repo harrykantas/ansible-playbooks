@@ -1,9 +1,9 @@
 ---
 
-- name: disable mdns in systemd-resolved
+- name: configure nextdns client
   become: yes
-  ansible.builtin.copy:
-    src: 10-disable_mdns.conf
+  ansible.builtin.template:
+    src: 20-nextdns.conf.j2
     dest: /etc/systemd/resolved.conf.d/
   notify:
     - restart systemd-resolved
