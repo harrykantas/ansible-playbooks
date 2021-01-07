@@ -3,7 +3,7 @@
 - name: install gnome packages
   become: yes
   community.general.pacman:
-    name: "{{packages.pacman}}"
+    name: "{{packages.gnome.pacman}}"
     state: present
     update_cache: yes
   register: task_result
@@ -13,4 +13,4 @@
 
 - name: install gnome packages from aur
   become: yes
-  ansible.builtin.command: "yay --batchinstall --answerclean n --answerdiff n --answeredit n --answerupgrade n --aur -S {{packages.aur}}"
+  ansible.builtin.command: "yay --batchinstall --answerclean n --answerdiff n --answeredit n --answerupgrade n --aur -S {{packages.gnome.aur}}"

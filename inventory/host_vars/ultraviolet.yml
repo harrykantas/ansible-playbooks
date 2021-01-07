@@ -38,4 +38,8 @@ install:
   nextdns_client:
   flexo_client:
   extra_packages:
+  flatpak_packages:
+
+packages:
+  extra:
     - acpi_call

@@ -1,28 +1,29 @@
-base_packages:
-  - base-devel
-  - openssh
-  - fish
-  - htop
-  - nmap
-  - curl
-  - tmux
-  - git
-  - rsync
-  - coreutils
-  - dateutils
-  - bc
-  - rsync
-  - strace
-  - lsof
-  - neovim
-  - tree
-  - terminus-font
-  - pacman-contrib
-
-flatpak:
-  - com.slack.Slack
-  - com.valvesoftware.Steam
-  - de.haeckerfelix.Shortwave
-  - org.darktable.Darktable
-  - org.signal.Signal
-  - org.videolan.VLC
+packages:
+  base:
+    - base-devel
+    - openssh
+    - fish
+    - htop
+    - nmap
+    - curl
+    - tmux
+    - git
+    - rsync
+    - coreutils
+    - dateutils
+    - bc
+    - rsync
+    - strace
+    - lsof
+    - neovim
+    - tree
+    - terminus-font
+    - pacman-contrib
+    - flatpak
+  flatpak:
+    - com.slack.Slack
+    - com.valvesoftware.Steam
+    - de.haeckerfelix.Shortwave
+    - org.darktable.Darktable
+    - org.signal.Signal
+    - org.videolan.VLC

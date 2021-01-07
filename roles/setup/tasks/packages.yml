@@ -3,7 +3,7 @@
 - name: install base packages
   become: yes
   community.general.pacman:
-    name: "{{base_packages}}"
+    name: "{{packages.base}}"
     state: present
   register: task_result
   until: task_result is success
@@ -13,10 +13,18 @@
 - name: install extra packages
   become: yes
   community.general.pacman:
-    name: "{{install.extra_packages}}"
+    name: "{{packages.extra}}"
     state: present
   register: task_result
   until: task_result is success
   retries: 2
   delay: 2
   when: install.extra_packages is defined
+
+- name: install flatpak packages
+  ansible.builtin.command: flatpak install -y {{packages.flatpak}}
+  register: task_result
+  until: task_result is success
+  retries: 2
+  delay: 2
+  when: install.flatpak_packages is defined
