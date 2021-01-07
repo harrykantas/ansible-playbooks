@@ -15,3 +15,16 @@ ansible-playbook -kK playbooks/archlinux_update.yml --tags update_packages
 ```
 ansible-playbook -l <hostname> -kK playbooks/backup.yml --tags backup
 ```
+
+
+### Roles included:
+- **acpid** (with custom rules)
+- **backup** (backup/restore ssh config using a local SMB share)
+- **dotfiles** (via another github repo)
+- **flexo** (client or server)
+- **gnome** (with GDM and NetworkManager)
+- **grub** (with custom kernel params)
+- **kernel** (with custom modules config)
+- **nextdns** (client or server)
+- **pacman** (and yay)
+- **setup** (package install and custom system config)

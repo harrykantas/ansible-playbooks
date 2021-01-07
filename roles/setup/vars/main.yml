@@ -18,3 +18,11 @@ base_packages:
   - tree
   - terminus-font
   - pacman-contrib
+
+flatpak:
+  - com.slack.Slack
+  - com.valvesoftware.Steam
+  - de.haeckerfelix.Shortwave
+  - org.darktable.Darktable
+  - org.signal.Signal
+  - org.videolan.VLC
