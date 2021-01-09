@@ -26,7 +26,6 @@ env_vars:
   - "QT_QPA_PLATFORM=wayland"
   - "SDL_VIDEODRIVER=wayland"
   - "MOZ_ENABLE_WAYLAND=1"
-  - "MOZ_USE_XINPUT2=1"
 
 install:
   grub:

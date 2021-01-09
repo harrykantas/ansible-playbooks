@@ -29,5 +29,4 @@ packages:
       - gnome-weather
     aur:
       - gnome-shell-extension-dynamic-top-bar-git
-      - gnome-shell-extension-extended-gestures-git
       - gnome-shell-extension-remove-dropdown-arrows
