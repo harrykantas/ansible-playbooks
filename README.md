@@ -19,6 +19,7 @@ ansible-playbook -l <hostname> -kK playbooks/backup.yml --tags backup
 
 ### Roles included:
 - **acpid** (with custom rules)
+- **upowerd** (custom config)
 - **backup** (backup/restore ssh config using a local SMB share)
 - **dotfiles** (via another github repo)
 - **flexo** (client or server)
