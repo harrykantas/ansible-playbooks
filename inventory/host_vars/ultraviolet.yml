@@ -29,7 +29,7 @@ env_vars:
 
 install:
   grub:
-  acpid:
+  upowerd:
   sysctl:
   udev:
   dotfiles:
@@ -39,6 +39,5 @@ install:
   extra_packages:
   flatpak_packages:
 
-packages:
-  extra:
-    - acpi_call
+extra_packages:
+  - acpi_call

@@ -1,0 +1,6 @@
+---
+
+- name: restart upowerd
+  ansible.builtin.systemd:
+    name: upowerd
+    state: restarted
