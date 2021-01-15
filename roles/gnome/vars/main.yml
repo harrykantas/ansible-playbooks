@@ -30,3 +30,4 @@ packages:
     aur:
       - gnome-shell-extension-dynamic-top-bar-git
       - gnome-shell-extension-remove-dropdown-arrows
+      - gnome-shell-extension-topicons-plus-git
