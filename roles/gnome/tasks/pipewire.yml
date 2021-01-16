@@ -1,0 +1,7 @@
+---
+
+- name: add {{user.name}} to the realtime group
+  become: yes
+  ansible.builtin.user:
+    user: "{{user.name}}"
+    groups: "realtime"

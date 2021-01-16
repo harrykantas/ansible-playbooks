@@ -3,6 +3,9 @@ packages:
     pacman:
       - gdm
       - networkmanager
+      - pipewire
+      - pipewire-pulse
+      - realtime-privileges
       - gnome-backgrounds
       - gnome-calculator
       - gnome-characters
