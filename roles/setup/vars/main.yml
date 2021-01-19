@@ -1,25 +1,27 @@
 packages:
   base:
     - base-devel
-    - openssh
-    - fish
-    - htop
-    - nmap
-    - curl
-    - tmux
-    - git
-    - rsync
-    - coreutils
-    - dateutils
+    - bash-completion
     - bc
-    - rsync
-    - strace
+    - coreutils
+    - curl
+    - dateutils
+    - fish
+    - flatpak
+    - git
+    - htop
     - lsof
     - neovim
-    - tree
-    - terminus-font
+    - nmap
+    - openssh
+    - ostree
     - pacman-contrib
-    - flatpak
+    - rsync
+    - strace      
+    - terminus-font
+    - tmux
+    - tree
+    
   flatpak:
     - com.slack.Slack
     - com.valvesoftware.Steam

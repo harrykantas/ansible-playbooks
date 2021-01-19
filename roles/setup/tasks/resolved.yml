@@ -5,5 +5,7 @@
   ansible.builtin.copy:
     src: resolved/10-disable_mdns.conf
     dest: /etc/systemd/resolved.conf.d/
+  when:
+    - install.resolved is defined
   notify:
     - restart systemd-resolved

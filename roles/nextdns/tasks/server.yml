@@ -2,6 +2,7 @@
 
 - name: install nextdns from aur
   become: yes
+  become_user: "{{yay_build_user}}"
   ansible.builtin.command: "yay --answerclean n --answerdiff n --answeredit n --answerupgrade n --aur -S nextdns"
 
 - name: setup nextdns server

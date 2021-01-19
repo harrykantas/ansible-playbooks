@@ -32,6 +32,7 @@ install:
   upowerd:
   sysctl:
   udev:
+  resolved:
   dotfiles:
   gnome:
   nextdns_client:
