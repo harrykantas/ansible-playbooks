@@ -5,7 +5,7 @@
   ansible.builtin.lineinfile:
     path: /etc/pacman.conf
     regexp: ^#({{item}})
-    line: \1
-  with_items:
+    line: "{{item}}"
+  loop:
     - "Color"
     - "VerbosePkgLists"
