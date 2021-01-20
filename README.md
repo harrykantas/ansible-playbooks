@@ -29,3 +29,10 @@ ansible-playbook -l <hostname> -kK playbooks/backup.yml --tags backup
 - **nextdns** (client or server)
 - **pacman** (and yay)
 - **setup** (package install and custom system config)
+
+### Tasks **not** included: 
+ - boot loader installation
+ - user creation
+ - locale.{gen,conf} configuration
+ - /etc/{hostname,hosts} configuration
+ 
