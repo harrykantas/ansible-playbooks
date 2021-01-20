@@ -12,4 +12,4 @@
   delay: 2
 
 - name: install gnome packages from aur
-  ansible.builtin.command: "yay --batchinstall --answerclean n --answerdiff n --answeredit n --answerupgrade n --aur -S {{packages.gnome.aur}}"
+  ansible.builtin.command: "{{aur.yay_cmd}} -S {{packages.gnome.aur}}"

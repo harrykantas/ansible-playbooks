@@ -11,9 +11,13 @@ ssh:
   backup_mount_point: /mnt
   backup_path: ssh
 
+aur:
+  yay_repo: https://aur.archlinux.org/yay.git
+  yay_dest: /tmp/yay
+  yay_cmd: "yay --answerclean n --answerdiff n --answeredit n --answerupgrade n --aur"
+
 flexo:
   server: 192.168.1.30
-
 
 nextdns:
   id: !vault |

@@ -2,16 +2,16 @@
 
 - name: clone the yay repo
   ansible.builtin.git:
-    repo: "{{yay_repo}}"
-    dest: "{{yay_dest}}"
+    repo: "{{aur.yay_repo}}"
+    dest: "{{aur.yay_dest}}"
 
-- name: check that {{yay_dest}} exists
+- name: check that {{aur.yay_dest}} exists
   ansible.builtin.stat:
-    path: "{{yay_dest}}"
+    path: "{{aur.yay_dest}}"
   register: yay_dir
 
 - name: build and install yay
   ansible.builtin.command: 
     cmd: "echo y | makepkg -si"
-    chdir: "{{yay_dest}}"
+    chdir: "{{aur.yay_dest}}"
   when: yay_dir.stat.isdir is defined and yay_dir.stat.isdir

@@ -1,7 +1,7 @@
 ---
 
 - name: install flexo from aur
-  ansible.builtin.command: "yay --answerclean n --answerdiff n --answeredit n --answerupgrade n --aur -S flexo-git"
+  ansible.builtin.command: "{{aur.yay_cmd}} -S flexo-git"
   notify: enable and start flexo
 
 - name: create systemd timer to run paccache
