@@ -1,3 +1,2 @@
 yay_repo: https://aur.archlinux.org/yay.git
 yay_dest: /tmp/yay
-yay_build_user: pkgbuild

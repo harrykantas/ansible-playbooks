@@ -1,19 +1,5 @@
 ---
 
-- name: create {{yay_build_user}} user
-  become: yes
-  ansible.builtin.user:
-    name: "{{yay_build_user}}"
-    groups: wheel
-
-- name: allow user {{yay_build_user}} passwordless sudo
-  become: yes
-  ansible.builtin.lineinfile:
-    path: /etc/sudoers.d/10-pkgbuild
-    line: '{{yay_build_user}} ALL=(ALL) NOPASSWD: /usr/bin/makepkg,/usr/bin/pacman'
-    create: yes
-    validate: 'visudo -cf %s'
-
 - name: clone the yay repo
   ansible.builtin.git:
     repo: "{{yay_repo}}"
@@ -24,15 +10,7 @@
     path: "{{yay_dest}}"
   register: yay_dir
 
-- name: set yay build-dir ownership to "{{yay_build_user}}"
-  become: yes
-  ansible.builtin.file:
-    path: "{{yay_dest}}"
-    owner: "{{yay_build_user}}"
-
 - name: build and install yay
-  become: yes
-  become_user: "{{yay_build_user}}"
   ansible.builtin.command: 
     cmd: "echo y | makepkg -si"
     chdir: "{{yay_dest}}"
