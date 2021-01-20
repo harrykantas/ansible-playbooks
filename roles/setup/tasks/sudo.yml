@@ -1,0 +1,11 @@
+---
+
+- name: config sudoers for the wheel group
+  become: yes
+  ansible.builtin.lineinfile:
+    path: "/etc/sudoers.d/10-wheel"
+    line: "{{item}}"
+    validate: "visudo -cf %s"
+  loop:
+    - "%wheel ALL=(ALL) ALL"
+    - "%wheel ALL=(ALL) NOPASSWD: /usr/bin/makepkg,/usr/bin/pacman"
