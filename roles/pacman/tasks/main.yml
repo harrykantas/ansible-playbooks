@@ -4,6 +4,7 @@
 - import_tasks: yay.yml
 
 - name: update packages with pacman
+  become: yes
   community.general.pacman:
     update_cache: yes
     upgrade: yes

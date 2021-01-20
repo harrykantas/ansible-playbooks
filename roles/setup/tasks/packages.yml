@@ -1,6 +1,7 @@
 ---
 
 - name: install base packages
+  become: yes
   community.general.pacman:
     name: "{{packages.base}}"
     state: present
@@ -10,6 +11,7 @@
   delay: 2
 
 - name: install extra packages
+  become: yes
   community.general.pacman:
     name: "{{extra_packages}}"
     state: present
