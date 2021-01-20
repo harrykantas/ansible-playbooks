@@ -1,7 +1,6 @@
 ---
 
 - name: install acpid
-  become: yes
   community.general.pacman:
     name: "acpid"
   register: task_result

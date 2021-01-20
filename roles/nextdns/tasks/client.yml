@@ -1,7 +1,6 @@
 ---
 
 - name: install systemd-resolvconf
-  become: yes
   community.general.pacman:
     name: systemd-resolvconf
     state: present

@@ -1,7 +1,6 @@
 ---
 
 - name: install flexo from aur
-  become: yes
   ansible.builtin.command: "yay --answerclean n --answerdiff n --answeredit n --answerupgrade n --aur -S flexo-git"
   notify: enable and start flexo
 
