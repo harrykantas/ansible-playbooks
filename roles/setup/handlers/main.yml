@@ -1,6 +1,7 @@
 ---
 
 - name: restart systemd-resolved
+  become: yes
   ansible.builtin.systemd:
     name: systemd-resolved
     state: restarted

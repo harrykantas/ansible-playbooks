@@ -11,7 +11,7 @@
   register: yay_dir
 
 - name: build and install yay
-  ansible.builtin.command: 
-    cmd: "echo y | makepkg -si"
+  ansible.builtin.shell: 
+    cmd: "yes | makepkg -si"
     chdir: "{{aur.yay_dest}}"
   when: yay_dir.stat.isdir is defined and yay_dir.stat.isdir

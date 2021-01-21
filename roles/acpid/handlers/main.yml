@@ -1,16 +1,19 @@
 ---
 
 - name: enable acpid
+  become: yes
   ansible.builtin.systemd:
     name: acpid
     enabled: yes
 
 - name: start acpid
+  become: yes
   ansible.builtin.systemd:
     name: acpid
     enabled: yes
 
 - name: restart acpid
+  become: yes
   ansible.builtin.systemd:
     name: acpid
     state: restarted

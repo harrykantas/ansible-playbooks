@@ -1,12 +1,14 @@
 ---
 
 - name: enable and start flexo
+  become: yes
   ansible.builtin.systemd:
     name: flexo
     enabled: yes
     state: started
 
 - name: enable and start sched-paccache.timer
+  become: yes
   ansible.builtin.systemd:
     name: sched-paccache.timer
     enabled: yes

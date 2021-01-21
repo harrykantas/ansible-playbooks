@@ -34,6 +34,7 @@ install:
   udev:
   resolved:
   dotfiles:
+  ssh_config:
   gnome:
   nextdns_client:
   flexo_client:

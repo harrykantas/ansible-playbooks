@@ -1,12 +1,14 @@
 ---
 
 - name: enable GDM
+  become: yes
   ansible.builtin.systemd:
     name: gdm
     enabled: yes
 
 - name: enable and start NetworkManager
+  become: yes
   ansible.builtin.systemd:
     name: NetworkManager
-    enabled: yes
     state: started
+    enabled: yes

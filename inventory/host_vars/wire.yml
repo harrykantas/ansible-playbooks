@@ -1,4 +1,5 @@
 install:
   dotfiles:
+  ssh_config:
   nextdns_server:
   flexo_server:

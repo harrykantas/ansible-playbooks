@@ -3,6 +3,13 @@
 - name: install nextdns from aur
   ansible.builtin.command: "{{aur.yay_cmd}} -S nextdns"
 
+- name: disable systemd-resolved
+  become: yes
+  ansible.builtin.systemd:
+    name: systemd-resolved
+    state: stopped
+    enabled: no
+
 - name: setup nextdns server
   become: yes
   ansible.builtin.command: "nextdns install -config {{nextdns.id}} -report-client-info -setup-router"

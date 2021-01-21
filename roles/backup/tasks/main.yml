@@ -7,6 +7,7 @@
     - mount -t cifs //{{ssh.backup_host}}/{{ssh.backup_share}} {{ssh.backup_mount_point}} -o "username=*,password="
     - rsync -a {{ssh.backup_mount_point}}/{{ssh.backup_path}}/ /home/{{user.name}}/.ssh/
     - umount {{ssh.backup_mount_point}}
+  when: install.ssh_config is defined
 
 - name: copy ssh config to a local SMB share
   become: yes
