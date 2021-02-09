@@ -11,9 +11,3 @@
   tags:
     - never
     - update_packages
-
-- name: update AUR packages with yay
-  ansible.builtin.command: "{{aur.yay_cmd}} -Syu"
-  tags: 
-    - never
-    - update_packages
