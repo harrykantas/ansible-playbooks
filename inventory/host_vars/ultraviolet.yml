@@ -29,7 +29,7 @@ env_vars:
 
 install:
   grub:
-  upowerd:
+  power:
   sysctl:
   udev:
   resolved:

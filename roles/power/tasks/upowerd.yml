@@ -12,6 +12,5 @@
     - {from: "PercentageCritical=3", to: "PercentageCritical=10"}
     - {from: "PercentageAction=2", to: "PercentageAction=8"}
     - {from: "CriticalPowerAction=HybridSleep", to: "CriticalPowerAction=Hibernate"}
-  when: install.upowerd is defined
   notify: 
     - restart upowerd

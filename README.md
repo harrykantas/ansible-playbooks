@@ -30,7 +30,7 @@ ansible-playbook -l <hostname> -kK playbooks/backup.yml --tags backup
 - **pacman** (and yay)
 - **setup** (package install and custom system config)
 
-### Tasks **not** included: 
+### Setup tasks **not** included: 
  - boot loader installation
  - user creation
  - locale.{gen,conf} configuration

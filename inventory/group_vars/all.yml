@@ -14,7 +14,7 @@ ssh:
 aur:
   yay_repo: https://aur.archlinux.org/yay.git
   yay_dest: /tmp/yay
-  yay_cmd: "yay --answerclean n --answerdiff n --answeredit n --answerupgrade n --aur"
+  yay_cmd: "yay --answerclean n --answerdiff n --answeredit n --answerupgrade y --aur"
 
 flexo:
   server: 192.168.1.30

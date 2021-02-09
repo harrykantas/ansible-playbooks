@@ -14,8 +14,8 @@
     - role: roles/acpid
       when: install.acpid is defined
 
-    - role: roles/upowerd
-      when: install.upowerd is defined
+    - role: roles/power
+      when: install.power is defined
 
     - role: roles/nextdns
 
