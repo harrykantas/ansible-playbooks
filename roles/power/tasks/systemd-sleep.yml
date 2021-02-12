@@ -1,7 +1,0 @@
----
-
-- name: enable hybrid-sleep
-  become: yes
-  ansible.builtin.copy:
-    src: sleep.conf
-    dest: /etc/systemd/sleep.conf.d/

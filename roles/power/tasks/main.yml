@@ -1,4 +1,3 @@
 ---
 
 - import_tasks: upowerd.yml
-- import_tasks: systemd-sleep.yml
