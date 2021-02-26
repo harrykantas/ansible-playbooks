@@ -4,3 +4,4 @@ install:
   wireguard:
   nextdns_server:
   flexo_server:
+  wireguard_vpn_server:
