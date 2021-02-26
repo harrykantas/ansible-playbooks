@@ -11,5 +11,5 @@ PostDown = iptables -D FORWARD -i %i -j ACCEPT; iptables -D FORWARD -o %i -j ACC
 [Peer]
 # ultraviolet
 PublicKey = {{wireguard.ultraviolet.public_key}}
-PresharedKey = {{wiregurd.wire.ultraviolet_preshared_key}}
+PresharedKey = {{wireguard.preshared_keys.wire_ultraviolet}}
 AllowedIPs = 10.10.1.2/32
