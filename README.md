@@ -26,6 +26,7 @@ ansible-playbook -l <hostname> -kK playbooks/backup.yml --tags backup
 - **gnome** (with GDM and NetworkManager)
 - **grub** (with custom kernel params)
 - **kernel** (with custom modules config)
+- **wireguard** (configured as a VPN)
 - **nextdns** (client or server)
 - **pacman** (and yay)
 - **setup** (package install and custom system config)
