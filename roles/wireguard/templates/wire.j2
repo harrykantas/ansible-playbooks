@@ -1,0 +1,15 @@
+[Interface]
+Address = 10.10.1.1/24
+ListenPort = 51820
+PrivateKey = {{wireguard.wire.private_key}}
+
+# substitute eth0 in the following lines to match the Internet-facing interface
+# if the server is behind a router and receives traffic via NAT, these iptables rules are not needed
+PostUp = iptables -A FORWARD -i %i -j ACCEPT; iptables -A FORWARD -o %i -j ACCEPT; iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
+PostDown = iptables -D FORWARD -i %i -j ACCEPT; iptables -D FORWARD -o %i -j ACCEPT; iptables -t nat -D POSTROUTING -o eth0 -j MASQUERADE
+
+[Peer]
+# ultraviolet
+PublicKey = {{wireguard.ultraviolet.public_key}}
+PresharedKey = {{wiregurd.wire.ultraviolet_preshared_key}}
+AllowedIPs = 10.10.1.2/32

@@ -21,6 +21,9 @@
 
     - role: roles/flexo
 
+    - role: roles/wireguard
+      when: install.wireguard is defined
+
     - role: roles/dotfiles
       when: install.dotfiles is defined
 

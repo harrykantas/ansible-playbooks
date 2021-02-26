@@ -1,0 +1,19 @@
+---
+
+- name: install wireguard-tools
+  become: yes
+  community.general.pacman:
+    name: wireguard-tools
+    state: present
+  register: task_result
+  until: task_result is success
+  retries: 2
+  delay: 2
+
+- name: configure wireguard
+  become: yes
+  ansible.builtin.template:
+    src: "{{ansible_hostname}}.j2"
+    dest: /etc/wireguard/wg0.conf
+  notify:
+    - enable and start wg0

@@ -12,10 +12,12 @@ packages:
     - htop
     - lsof
     - neovim
+    - netcat
     - nmap
     - openssh
     - ostree
     - pacman-contrib
+    - python
     - rsync
     - strace      
     - terminus-font

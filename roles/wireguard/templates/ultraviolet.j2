@@ -1,0 +1,10 @@
+[Interface]
+Address = 10.10.1.2/24
+PrivateKey = {{wireguard.ultraviolet.private_Key}}
+
+[Peer]
+PublicKey = {{wireguard.wire.public_key}}
+PresharedKey = {{wireguard.wire.ultraviolet_preshared_key}}
+Endpoint = 79.97.191.78:51820
+AllowedIPs = 10.10.1.0/24, 192.168.1.0/24
+PersistentKeepAlive = 25
