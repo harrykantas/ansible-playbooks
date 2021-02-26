@@ -6,4 +6,4 @@
     name: wg-quick@wg0.service
     enabled: yes
     state: started
-  when: install.wireguard_vpn_server is defined
+  when: services.wireguard is defined

@@ -8,3 +8,4 @@
 - import_tasks: udev.yml
 - import_tasks: vconsole.yml
 - import_tasks: resolved.yml
+- import_tasks: ssh.yml
