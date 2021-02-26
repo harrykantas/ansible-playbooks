@@ -1,0 +1,9 @@
+---
+
+- name: enable and start sshd
+  become: yes
+  ansible.builtin.systemd:
+    name: sshd
+    state: started
+    enabled: yes
+  when: services.sshd is defined
