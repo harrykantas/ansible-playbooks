@@ -16,4 +16,5 @@
     src: "{{ansible_hostname}}.j2"
     dest: /etc/wireguard/wg0.conf
   notify:
+    - enable IP forwarding
     - enable and start wg0

@@ -7,3 +7,17 @@
     enabled: yes
     state: started
   when: services.wireguard is defined
+
+- name: enable IP forwarding
+  become: yes
+  ansible.builtin.copy:
+    src: sysctld/
+    dest: /etc/sysctl.d/
+  when: services.wireguard is defined
+
+- name: disable NetworManager for wg0
+  become: yes
+  ansible.builtin.copy:
+    src: NetworkManager/
+    dest: /etc/NetworkManager/conf.d/
+  when: services.wireguard is not defined
