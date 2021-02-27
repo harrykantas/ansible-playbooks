@@ -6,7 +6,7 @@ Ansible Playbooks
 ansible-playbook [-l <hostname>] -kK --ask-vault-pass playbooks/archlinux_setup.yml
 ```
 
-## Update the system(s) with pacman and yay
+## Update the system(s) with pacman
 ```
 ansible-playbook -kK playbooks/archlinux_update.yml --tags update_packages
 ```
