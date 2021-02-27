@@ -19,17 +19,17 @@ ansible-playbook -l <hostname> -kK playbooks/backup.yml --tags backup
 
 ### Roles included:
 - **acpid** (with custom rules)
-- **upowerd** (custom config)
 - **backup** (backup/restore ssh config using a local SMB share)
 - **dotfiles** (via another github repo)
 - **flexo** (client or server)
 - **gnome** (with GDM and NetworkManager)
 - **grub** (with custom kernel params)
 - **kernel** (with custom modules config)
-- **wireguard** (configured as a VPN)
 - **nextdns** (client or server)
 - **pacman** (and yay)
 - **setup** (package install and custom system config)
+- **upowerd** (custom config)
+- **wireguard** (configured as a VPN)
 
 ### Setup tasks **not** included: 
  - boot loader installation
