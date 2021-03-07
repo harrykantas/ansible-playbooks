@@ -17,6 +17,8 @@
     - role: roles/power
       when: install.power is defined
 
+    - role: roles/git
+
     - role: roles/nextdns
 
     - role: roles/flexo

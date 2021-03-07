@@ -1,0 +1,12 @@
+---
+
+- name: configure git
+  ansible.builtin.command: git config --global {{item}}
+  with_items:
+    - user.name {{user.name}}
+    - user.email {{user.email}}
+  when: install.ssh_config is defined
+
+- name: git integration with gnome-keyring
+  ansible.builtin.command: git config --global credential.helper /usr/lib/git-core/git-credential-libsecret
+  when: install.gnome is defined
