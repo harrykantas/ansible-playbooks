@@ -1,4 +1,0 @@
-install:
-  nextdns_server:
-
-services:

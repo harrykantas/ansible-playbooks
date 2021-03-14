@@ -1,5 +1,3 @@
 [archlinux]
-boomerang
-
 ultraviolet	ansible_connection=local
 wire

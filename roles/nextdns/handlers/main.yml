@@ -5,3 +5,10 @@
   ansible.builtin.systemd:
     name: nextdns
     state: restarted
+
+- name: enable and start dhcpcd
+  become: yes
+  ansible.builtin.systemd:
+    name: dhcpcd
+    state: started
+    enabled: yes

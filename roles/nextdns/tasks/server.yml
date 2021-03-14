@@ -13,6 +13,7 @@
 - name: setup nextdns server
   become: yes
   ansible.builtin.command: "nextdns install -config {{nextdns.id}} -report-client-info -setup-router"
+  notify: enable and start dhcpcd
 
 - name: configure nextdns server
   become: yes
