@@ -36,7 +36,7 @@ install:
   ssh_config:
   wireguard:
   gnome:
-  nextdns_client:
+  nextdns:
   flexo_client:
   extra_packages:
   flatpak_packages:
@@ -45,3 +45,4 @@ extra_packages:
   - acpi_call
 
 services:
+  nextdns_client:

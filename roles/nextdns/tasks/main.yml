@@ -1,7 +1,10 @@
 ---
 
+- name: install nextdns from aur
+  ansible.builtin.command: "{{aur.yay_cmd}} -S nextdns"
+
 - import_tasks: client.yml
-  when: install.nextdns_client is defined
+  when: services.nextdns_client is defined
 
 - import_tasks: server.yml
-  when: install.nextdns_server is defined
+  when: services.nextdns_server is defined

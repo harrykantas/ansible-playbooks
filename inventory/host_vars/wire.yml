@@ -2,9 +2,10 @@ install:
   dotfiles:
   ssh_config:
   wireguard:
-  nextdns_server:
+  nextdns:
   flexo_server:
 
 services:
   wireguard:
   sshd:
+  nextdns_server:

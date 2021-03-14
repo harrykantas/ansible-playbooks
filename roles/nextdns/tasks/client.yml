@@ -1,19 +1,10 @@
 ---
 
-- name: install systemd-resolvconf
+- name: setup nextdns client
   become: yes
-  community.general.pacman:
-    name: systemd-resolvconf
-    state: present
-  register: task_result
-  until: task_result is success
-  retries: 2
-  delay: 2
+  ansible.builtin.command: "nextdns install -config {{nextdns.id}} -report-client-info -auto-activate"
 
 - name: configure nextdns client
   become: yes
-  ansible.builtin.template:
-    src: 20-nextdns.conf.j2
-    dest: /etc/systemd/resolved.conf.d/
-  notify:
-    - restart systemd-resolved
+  ansible.builtin.command: "nextdns config set -cache-size=10MB -max-ttl=5s"
+  notify: restart nextdns
