@@ -2,7 +2,7 @@
 
 - name: install flexo from aur
   ansible.builtin.command: "{{aur.yay_cmd}} -S flexo-git"
-  notify: enable and start flexo
+  notify: enable flexo
 
 - name: create systemd timer to run paccache
   become: yes
@@ -13,3 +13,13 @@
     - sched-paccache.timer
     - sched-paccache.service
   notify: enable and start sched-paccache.timer
+
+- name: config flexo server
+  become: yes
+  ansible.builtin.lineinfile:
+    path: /etc/flexo/flexo.toml
+    regexp: "^{{item.before}}$"
+    line: "{{item.after}}"
+  with_items:
+    - {before: "allowed_countries = []", after: "allowed_countries = [\"IE\", \"GB\"]"}
+  notify: start flexo
