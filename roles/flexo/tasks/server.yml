@@ -21,5 +21,5 @@
     regexp: "^{{item.before}}$"
     line: "{{item.after}}"
   with_items:
-    - {before: "allowed_countries = []", after: "allowed_countries = [\"IE\", \"GB\"]"}
+    - {before: 'allowed_countries = \[]', after: 'allowed_countries = \["IE", "GB"]'}
   notify: start flexo
