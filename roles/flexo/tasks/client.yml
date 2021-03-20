@@ -4,5 +4,8 @@
   become: yes
   ansible.builtin.lineinfile:
     path: /etc/pacman.conf
-    insertbefore: "^Include = /etc/pacman.d/mirrorlist$"
-    line: "Server = http://{{flexo.server}}:7878/$repo/os/$arch"
+    insertbefore: "^{{item.before}}$"
+    line: "{{item.insert}}"
+  with_items:
+    - {before: "Include = /etc/pacman.d/mirrorlist", insert: "Server = http://{{flexo.server}}:7878/$repo/os/$arch"}
+    - {before: "#Include = /etc/pacman.d/mirrorlist", insert: "#Server = http://{{flexo.server}}:7878/$repo/os/$arch"}
