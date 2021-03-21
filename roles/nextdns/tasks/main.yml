@@ -2,6 +2,8 @@
 
 - import_tasks: client.yml
   when: services.nextdns_client is defined
+  tags: nextdns_client
 
 - import_tasks: server.yml
   when: services.nextdns_server is defined
+  tags: nextdns_server

@@ -14,6 +14,6 @@
   become: yes
   ansible.builtin.template:
     src: 20-nextdns.conf.j2
-    dest: /etc/systemd/resolved.conf.d/
+    dest: /etc/systemd/resolved.conf.d/20-nextdns.conf
   notify:
     - restart systemd-resolved
