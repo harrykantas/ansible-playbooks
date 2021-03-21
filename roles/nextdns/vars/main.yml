@@ -1,0 +1,6 @@
+---
+
+dns1_v4: "45.90.28.0#{{inventory_hostname}}-{{nextdns.id}}.dns1.nextdns.io"
+dns2_v4: "45.90.30.0#{{inventory_hostname}}-{{nextdns.id}}.dns2.nextdns.io"
+dns1_v6: "2a07:a8c0::#{{inventory_hostname}}-{{nextdns.id}}.dns1.nextdns.io"
+dns2_v6: "2a07:a8c1::#{{inventory_hostname}}-{{nextdns.id}}.dns2.nextdns.io"
