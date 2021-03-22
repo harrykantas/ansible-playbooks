@@ -6,6 +6,8 @@ packages:
     - coreutils
     - curl
     - dateutils
+    - duf
+    - exa
     - fish
     - flatpak
     - git
@@ -22,12 +24,10 @@ packages:
     - strace      
     - terminus-font
     - tmux
-    - tree
     
   flatpak:
     - com.slack.Slack
     - com.valvesoftware.Steam
-    - de.haeckerfelix.Shortwave
     - org.darktable.Darktable
     - org.signal.Signal
     - org.videolan.VLC

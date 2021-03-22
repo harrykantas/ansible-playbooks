@@ -18,7 +18,6 @@
       when: install.power is defined
 
     - role: roles/nextdns
-      when: install.nextdns is defined
 
     - role: roles/flexo
 
