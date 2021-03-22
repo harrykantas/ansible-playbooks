@@ -6,7 +6,6 @@ packages:
     - coreutils
     - curl
     - dateutils
-    - duf
     - exa
     - fish
     - flatpak

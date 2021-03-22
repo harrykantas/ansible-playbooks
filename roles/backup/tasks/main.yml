@@ -4,7 +4,7 @@
   become: yes
   ansible.builtin.command: "{{item}}"
   with_items:
-    - mount -t cifs //{{ssh.backup_host}}/{{ssh.backup_share}} {{ssh.backup_mount_point}} -o "username=*,password="
+    - mount -t cifs //{{ssh.backup_host}}/{{ssh.backup_share}} {{ssh.backup_mount_point}} -o "username={{ssh.backup_host_user}},password={{ssh_backup_host.pass}}"
     - rsync -a {{ssh.backup_mount_point}}/{{ssh.backup_path}}/ /home/{{user.name}}/.ssh/
     - umount {{ssh.backup_mount_point}}
   when: install.ssh_config is defined

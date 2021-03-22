@@ -3,6 +3,7 @@
 - name: install base packages
   become: yes
   community.general.pacman:
+    update_cache: yes
     name: "{{packages.base}}"
     state: present
   register: task_result
