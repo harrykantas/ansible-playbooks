@@ -1,8 +1,10 @@
 packages:
   gnome:
     pacman:
+      - flatpak
       - gdm
       - networkmanager
+      - ostree
       - pipewire
       - pipewire-pulse
       - realtime-privileges
@@ -22,6 +24,7 @@ packages:
       - gnome-shell
       - gnome-shell-extensions
       - gnome-software
+      - gnome-software-packagekit-plugin
       - gnome-system-monitor
       - gnome-terminal
       - gnome-themes-extra
@@ -31,6 +34,3 @@ packages:
       - gnome-video-effects
       - gnome-weather
     aur:
-      - gnome-shell-extension-dynamic-top-bar-git
-      - gnome-shell-extension-remove-dropdown-arrows
-      - gnome-shell-extension-topicons-plus-git

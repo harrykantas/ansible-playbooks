@@ -8,7 +8,6 @@ packages:
     - dateutils
     - exa
     - fish
-    - flatpak
     - git
     - htop
     - lsof
@@ -16,7 +15,6 @@ packages:
     - netcat
     - nmap
     - openssh
-    - ostree
     - pacman-contrib
     - python
     - rsync
