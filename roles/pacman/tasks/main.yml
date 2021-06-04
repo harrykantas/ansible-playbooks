@@ -1,7 +1,7 @@
 ---
 
 - import_tasks: config.yml
-- import_tasks: yay.yml
+# - import_tasks: yay.yml
 
 - name: update packages with pacman
   become: yes

@@ -33,4 +33,4 @@ packages:
       - gnome-user-share
       - gnome-video-effects
       - gnome-weather
-    aur:
+      - xdg-user-dirs-gtk

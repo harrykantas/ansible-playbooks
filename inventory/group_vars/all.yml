@@ -6,7 +6,7 @@ user:
     git_dir: /home/harry/Projects/dotfiles
 
 ssh:
-  backup_host: 192.168.1.10
+  backup_host: 192.168.0.10
   backup_host_user: harry
   backup_share: backup
   backup_mount_point: /mnt

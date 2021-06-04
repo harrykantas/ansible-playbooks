@@ -11,5 +11,5 @@
   retries: 2
   delay: 2
 
-- name: install gnome packages from aur
-  ansible.builtin.command: "{{aur.yay_cmd}} -S {{packages.gnome.aur}}"
+# - name: install gnome packages from aur
+#   ansible.builtin.command: "{{aur.yay_cmd}} -S {{packages.gnome.aur}}"

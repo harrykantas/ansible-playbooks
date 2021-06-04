@@ -1,18 +1,27 @@
 ---
 
-- name: clone the dotfiles repo
-  ansible.builtin.git:
-    repo: "{{user.dotfiles.repo}}"
-    dest: /home/{{user.name}}/dotfiles
-    separate_git_dir: "{{user.dotfiles.git_dir}}"
-
 - name: check that the dotfiles temp dir exists
   ansible.builtin.stat:
     path: /home/{{user.name}}/dotfiles
   register: dotfiles_tmp_dir
 
+- name: check that the dotfiles dir exists
+  ansible.builtin.stat:
+    path: /home/{{user.name}}/Projects/dotfiles
+  register: dotfiles_dir
+
+- name: clone the dotfiles repo
+  ansible.builtin.git:
+    repo: "{{user.dotfiles.repo}}"
+    dest: /home/{{user.name}}/dotfiles
+    separate_git_dir: "{{user.dotfiles.git_dir}}"
+  when: 
+    - not dotfiles_tmp_dir.stat.isdir is defined
+    - not dotfiles_dir.stat.isdir is defined
+
 - name: copy dotfiles to home dir
   ansible.builtin.copy:
+    remote_src: yes
     src: /home/{{user.name}}/dotfiles
     dest: "/home/{{user.name}}"
   when: dotfiles_tmp_dir.stat.isdir is defined and dotfiles_tmp_dir.stat.isdir

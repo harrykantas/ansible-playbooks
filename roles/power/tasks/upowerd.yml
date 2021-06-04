@@ -7,7 +7,6 @@
     regexp: ^{{item.from}}
     line: "{{item.to}}"
   with_items:
-    - {from: "IgnoreLid=false", to: "IgnoreLid=true"}
     - {from: "PercentageLow=10", to: "PercentageLow=15"}
     - {from: "PercentageCritical=3", to: "PercentageCritical=10"}
     - {from: "PercentageAction=2", to: "PercentageAction=8"}
