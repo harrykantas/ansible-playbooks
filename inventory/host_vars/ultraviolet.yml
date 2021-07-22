@@ -1,7 +1,7 @@
 cpu: intel
 
 kernel:
-  params: "acpi_os_name=\"Windows 2015\" msr.allow_writes=on intremap=no_x2apic_optout pci=realloc intel_iommu=off"
+  params: "msr.allow_writes=on intremap=no_x2apic_optout pci=realloc intel_iommu=off mem_sleep_default=deep"
   modules: "i915 intel_lpss_pci thinkpad_acpi"
 
 fonts:
@@ -14,7 +14,7 @@ modules:
     - "blacklist snd_hda_intel"
     - "blacklist snd_soc_skl"
   options:
-    - "options i915 enable_guc=-1"
+    - "options i915 enable_guc=2"
     - "options iwlwifi power_save=1"
     - "options iwlmvm power_scheme=3"
     - "options thinkpad_acpi experimental=1"
