@@ -42,6 +42,7 @@ nextdns:
 
 wireguard:
   wire:
+    endpoint: vpn.harrykantas.com
     private_key: !vault |
             $ANSIBLE_VAULT;1.1;AES256
             31396263343333363631353639323261393938343833653238616631623466613564323339313466

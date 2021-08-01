@@ -1,7 +1,7 @@
 cpu: intel
 
 kernel:
-  params: "mem_sleep_default=deep"
+  params: "intremap=no_x2apic_optout tsc=unstable mitigations=off"
   modules: "i915 intel_lpss_pci thinkpad_acpi"
 
 fonts:
@@ -10,10 +10,11 @@ fonts:
 modules:
   blacklist:
     - "blacklist pcspkr"
+    - "blacklist i2c_i801"
     - "blacklist snd_hda_intel"
     - "blacklist snd_soc_skl"
   options:
-    - "options i915 enable_guc=2"
+    - "options i915 enable_guc=2 mitigations=off"
     - "options iwlwifi power_save=1"
     - "options iwlmvm power_scheme=3"
     - "options thinkpad_acpi experimental=1"
@@ -27,7 +28,9 @@ env_vars:
 
 install:
   grub:
+  power:
   sysctl:
+  udev:
   resolved:
   dotfiles:
   ssh_config:

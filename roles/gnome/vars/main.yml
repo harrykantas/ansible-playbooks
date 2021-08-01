@@ -1,23 +1,24 @@
 packages:
   gnome:
     pacman:
+      - dconf-editor
       - flatpak
       - gdm
-      - networkmanager
-      - ostree
-      - pipewire
-      - pipewire-pulse
-      - realtime-privileges
+      - gnome-autoar
       - gnome-backgrounds
+      - gnome-bluetooth
       - gnome-calculator
       - gnome-characters
       - gnome-clocks
       - gnome-color-manager
       - gnome-control-center
+      - gnome-desktop
       - gnome-disk-utility
+      - gnome-firmware
       - gnome-keyring
       - gnome-logs
       - gnome-menus
+      - gnome-online-accounts
       - gnome-screenshot
       - gnome-session
       - gnome-settings-daemon
@@ -33,4 +34,14 @@ packages:
       - gnome-user-share
       - gnome-video-effects
       - gnome-weather
+      - networkmanager
+      - ostree
+      - pipewire
+      - pipewire-pulse
+      - realtime-privileges
       - xdg-user-dirs-gtk
+    aur:
+      - gnome-shell-extension-appindicator
+      - gnome-shell-extension-freon-git
+      - gnome-shell-extension-just-perfection-desktop-git
+      - gnome-shell-extension-remove-dropdown-arrows
