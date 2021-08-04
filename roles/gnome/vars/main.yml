@@ -2,7 +2,6 @@ packages:
   gnome:
     pacman:
       - dconf-editor
-      - flatpak
       - gdm
       - gnome-autoar
       - gnome-backgrounds
@@ -37,6 +36,7 @@ packages:
       - networkmanager
       - ostree
       - pipewire
+      - pipewire-alsa
       - pipewire-pulse
       - realtime-privileges
       - xdg-user-dirs-gtk

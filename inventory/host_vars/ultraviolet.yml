@@ -2,7 +2,7 @@ cpu: intel
 
 kernel:
   params: "mem_sleep_default=deep"
-  modules: "i915 intel_lpss_pci thinkpad_acpi"
+  modules: "vmd i915"
 
 fonts:
   vconsole: ter-i18n
@@ -10,13 +10,10 @@ fonts:
 modules:
   blacklist:
     - "blacklist pcspkr"
-    - "blacklist snd_hda_intel"
-    - "blacklist snd_soc_skl"
   options:
     - "options i915 enable_guc=2"
     - "options iwlwifi power_save=1"
     - "options iwlmvm power_scheme=3"
-    - "options thinkpad_acpi experimental=1"
 
 env_vars:
   - "LIBVA_DRIVER_NAME=iHD"
@@ -26,7 +23,6 @@ env_vars:
   - "MOZ_ENABLE_WAYLAND=1"
 
 install:
-  grub:
   sysctl:
   resolved:
   dotfiles:
@@ -34,9 +30,15 @@ install:
   wireguard:
   gnome:
   nextdns_client:
-  flexo_client:
+  #flexo_client:
   extra_packages:
   flatpak_packages:
 
 extra_packages:
   - acpi_call
+  - flatpak
+  - gst-libav
+  - libva-utils
+
+services:
+  - sshd

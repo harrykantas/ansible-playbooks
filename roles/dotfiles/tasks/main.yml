@@ -22,7 +22,7 @@
 - name: copy dotfiles to home dir
   ansible.builtin.copy:
     remote_src: yes
-    src: /home/{{user.name}}/dotfiles
+    src: /home/{{user.name}}/dotfiles/
     dest: "/home/{{user.name}}"
   when: dotfiles_tmp_dir.stat.isdir is defined and dotfiles_tmp_dir.stat.isdir
   

@@ -1,5 +1,6 @@
 packages:
   base:
+    - ansible
     - base-devel
     - bash-completion
     - bc
@@ -8,6 +9,7 @@ packages:
     - dateutils
     - exa
     - fish
+    - flatpak
     - git
     - htop
     - lsof
@@ -21,8 +23,6 @@ packages:
     - strace      
     - terminus-font
     - tmux
-    - vim
-    
   flatpak:
     - com.discordapp.Discord
     - com.obsproject.Studio
@@ -32,7 +32,6 @@ packages:
     - org.audacityteam.Audacity
     - org.darktable.Darktable
     - org.gimp.GIMP
-    - org.gnome.Boxes
     - org.signal.Signal
     - org.videolan.VLC
     - us.zoom.Zoom

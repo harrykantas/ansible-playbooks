@@ -9,4 +9,4 @@
     validate: "visudo -cf %s"
   loop:
     - "%wheel ALL=(ALL) ALL"
-    - "%wheel ALL=(ALL) NOPASSWD: /usr/bin/makepkg,/usr/bin/pacman"
+    - "%wheel ALL=(ALL) NOPASSWD: /usr/bin/makepkg,/usr/bin/pacman,/usr/bin/wakertc"

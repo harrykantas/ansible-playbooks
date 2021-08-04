@@ -1,13 +1,20 @@
 ---
 
-- name: config mkinitcpio.conf
+- name: backup mkinitcpio.conf
+  become: yes
+  ansible.builtin.copy:
+    remote_src: yes
+    src: /etc/mkinitcpio.conf
+    dest: /etc/mkinitcpio.conf.ans
+
+- name: modify mkinitcpio.conf
   become: yes
   ansible.builtin.lineinfile:
     path: /etc/mkinitcpio.conf
     regex: "{{item.from}}"
     line: "{{item.to}}"
   with_items:
-    - {from: "MODULES()", to: "MODULES({{kernel.modules}})"}
+    - {from: "MODULES=()", to: "MODULES=({{kernel.modules}})"}
   when: kernel.modules is defined
   notify:
     - generate initramfs

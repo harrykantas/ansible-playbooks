@@ -22,7 +22,13 @@
   delay: 2
   when: install.extra_packages is defined
 
+- name: add flathub repo
+  become: yes
+  ansible.builtin.command: flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+  when: install.flatpak_packages is defined
+
 - name: install flatpak packages
+  become: yes
   ansible.builtin.command: flatpak install -y {{packages.flatpak}}
   register: task_result
   until: task_result is success

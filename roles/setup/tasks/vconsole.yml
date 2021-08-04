@@ -3,6 +3,6 @@
 - name: configure console font
   become: yes
   ansible.builtin.copy:
-    content: FONT={{fonts.vconsole}}
+    content: "FONT={{fonts.vconsole}}"
     dest: /etc/vconsole.conf
   when: fonts.vconsole is defined

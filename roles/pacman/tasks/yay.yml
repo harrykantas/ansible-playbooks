@@ -10,8 +10,8 @@
     path: "{{aur.yay_dest}}"
   register: yay_dir
 
-- name: build and install yay
-  ansible.builtin.shell: 
-    cmd: "yes | makepkg -si"
-    chdir: "{{aur.yay_dest}}"
-  when: yay_dir.stat.isdir is defined and yay_dir.stat.isdir
+# - name: build and install yay
+#   ansible.builtin.shell: 
+#     cmd: "yes | makepkg -si"
+#     chdir: "{{aur.yay_dest}}"
+#   when: yay_dir.stat.isdir is defined and yay_dir.stat.isdir

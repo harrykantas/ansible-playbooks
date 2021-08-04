@@ -1,5 +1,4 @@
 ---
 
-- import_tasks: grub.yml
 - import_tasks: mkinitcpio.yml
 - import_tasks: modprobe.yml

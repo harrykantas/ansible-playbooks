@@ -1,6 +1,6 @@
 ---
 
-- name: edit pacman.conf
+- name: modify pacman.conf
   become: yes
   ansible.builtin.lineinfile:
     path: /etc/pacman.conf
@@ -9,3 +9,4 @@
   loop:
     - "Color"
     - "VerbosePkgLists"
+    - "ParallelDownloads = 5"

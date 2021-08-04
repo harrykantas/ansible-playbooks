@@ -8,8 +8,8 @@
     - rsync -a {{ssh.backup_mount_point}}/{{ssh.backup_path}}/ /home/{{user.name}}/.ssh/
     - umount {{ssh.backup_mount_point}}
     - chown -R {{user.name}}:{{user.name}} /hone/{{user.name}}/.ssh
-    - chmod 600 /home/{{user.name}}/.ssh/*
-    - chmod 644 /home/{{user.name}}/.ssh/*.pub
+    - bash -c "chmod 600 /home/{{user.name}}/.ssh/*"
+    - bash -c "chmod 644 /home/{{user.name}}/.ssh/*.pub"
   when: install.ssh_config is defined
 
 - name: copy ssh config to a local SMB share
