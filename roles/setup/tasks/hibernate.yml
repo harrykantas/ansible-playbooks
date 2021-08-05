@@ -1,0 +1,14 @@
+---
+
+- name: copy hibernate-after-suspend service
+  become: yes
+  ansible.builtin.copy:
+    src: hibernate/
+    dest: /etc/systemd/system/
+  when: install.hibernate is defined
+
+- name: enable hibernate-after-suspend service
+  become: yes
+  ansible.builtin.systemd:
+    name: hibernate-after-suspend
+    enabled: yes

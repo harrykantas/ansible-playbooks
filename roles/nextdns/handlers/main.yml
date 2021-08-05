@@ -12,3 +12,10 @@
     name: dhcpcd
     state: started
     enabled: yes
+
+- name: enable and start systemd-resolved
+  become: yes
+  ansible.builtin.systemd:
+    name: systemd-resolved
+    state: started
+    enabled: yes

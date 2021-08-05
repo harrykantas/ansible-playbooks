@@ -4,21 +4,21 @@
   hosts: archlinux
 
   roles:
-    - role: roles/setup
-    - role: roles/kernel
-    - role: roles/pacman
+    #    - role: roles/setup
+    #- role: roles/kernel
+    #- role: roles/pacman
 
-    - role: roles/nextdns
+    #- role: roles/nextdns
 
-    - role: roles/flexo
+    #- role: roles/flexo
 
-    - role: roles/wireguard
-      when: install.wireguard is defined
+    #- role: roles/wireguard
+    #  when: install.wireguard is defined
 
-    - role: roles/dotfiles
-      when: install.dotfiles is defined
+    #- role: roles/dotfiles
+    #  when: install.dotfiles is defined
 
-    - role: roles/backup
+    #- role: roles/backup
 
     - role: roles/gnome
       when: install.gnome is defined
