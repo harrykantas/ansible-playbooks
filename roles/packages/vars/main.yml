@@ -24,14 +24,10 @@ packages:
     - terminus-font
     - tmux
   flatpak:
-    - com.discordapp.Discord
     - com.obsproject.Studio
-    - com.slack.Slack
     - com.valvesoftware.Steam
-    - com.valvesoftware.Steam.Utility.protontricks
     - org.audacityteam.Audacity
     - org.darktable.Darktable
     - org.gimp.GIMP
     - org.signal.Signal
     - org.videolan.VLC
-    - us.zoom.Zoom

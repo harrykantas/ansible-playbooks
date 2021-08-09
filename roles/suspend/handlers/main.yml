@@ -1,0 +1,7 @@
+---
+
+- name: enable hibernate-after-suspend service
+  become: yes
+  ansible.builtin.systemd:
+    name: hibernate-after-suspend
+    enabled: yes

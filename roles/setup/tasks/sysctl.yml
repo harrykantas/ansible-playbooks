@@ -1,8 +1,0 @@
----
-
-- name: sysctl config
-  become: yes
-  ansible.builtin.copy:
-    src: sysctl/
-    dest: /etc/systctl.d/
-  when: install.sysctl is defined

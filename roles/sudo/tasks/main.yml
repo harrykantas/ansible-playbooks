@@ -1,0 +1,7 @@
+---
+
+- name: config sudoers for the wheel group
+  become: yes
+  ansible.builtin.copy:
+    src: sudoers.d/
+    dest: /etc/sudoers.d/

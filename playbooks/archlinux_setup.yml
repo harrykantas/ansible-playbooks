@@ -4,21 +4,47 @@
   hosts: archlinux
 
   roles:
-    #    - role: roles/setup
-    #- role: roles/kernel
-    #- role: roles/pacman
+    - role: roles/microcode
+      when: cpu is defined
 
-    #- role: roles/nextdns
+    - role: roles/udev
+      when: install.udev is defined
 
-    #- role: roles/flexo
+    - role: roles/resolved
+      when: install.resolved is defined
 
-    #- role: roles/wireguard
-    #  when: install.wireguard is defined
+    - role: roles/sysctl
+      when: install.sysctl is defined
 
-    #- role: roles/dotfiles
-    #  when: install.dotfiles is defined
+    - role: roles/sudo
+      when: install.sudo is defined
 
-    #- role: roles/backup
+    - role: roles/sshd
+      when: install.sshd is defined
+
+    - role: roles/suspend
+      when: install.suspend is defined
+
+    - role: roles/environment
+      when: env_vars is defined
+
+    - role: roles/vconsole
+      when: fonts.vconsole is defined
+
+    - role: roles/packages
+
+    - role: roles/kernel
+    - role: roles/pacman
+
+    - role: roles/nextdns
+
+    - role: roles/flexo
+
+    - role: roles/wireguard
+      when: install.wireguard is defined
+
+    - role: roles/dotfiles
+      when: install.dotfiles is defined
 
     - role: roles/gnome
       when: install.gnome is defined

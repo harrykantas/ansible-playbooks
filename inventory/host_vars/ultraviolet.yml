@@ -23,14 +23,17 @@ env_vars:
   - "MOZ_ENABLE_WAYLAND=1"
 
 install:
+  sudo:
   sysctl:
+  udev:
   resolved:
+  suspend:
   dotfiles:
+  sshd:
   ssh_config:
   wireguard:
   gnome:
   nextdns_client:
-  #flexo_client:
   extra_packages:
   flatpak_packages:
 
@@ -38,7 +41,6 @@ extra_packages:
   - acpi_call
   - flatpak
   - gst-libav
+  - intel-media-driver
+  - vulkan-intel
   - libva-utils
-
-services:
-  - sshd

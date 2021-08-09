@@ -6,4 +6,3 @@
     path: /etc/environment
     line: "{{item}}"
   with_items: "{{env_vars}}"
-  when: env_vars is defined

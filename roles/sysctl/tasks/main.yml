@@ -1,0 +1,7 @@
+---
+
+- name: sysctl config
+  become: yes
+  ansible.builtin.copy:
+    src: sysctl.d/
+    dest: /etc/systctl.d/

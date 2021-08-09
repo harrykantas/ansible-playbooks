@@ -1,11 +1,13 @@
 ---
 
-- name: install {{cpu}}-ucode
+- name: install openssh package
   become: yes
   community.general.pacman:
-    name: "{{cpu}}-ucode"
-  when: cpu is defined
+    update_cache: yes
+    name: openssh
+    state: present
   register: task_result
   until: task_result is success
   retries: 2
   delay: 2
+  notify: enable and start sshd

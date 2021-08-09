@@ -1,0 +1,8 @@
+---
+
+- name: copy hibernate-after-suspend service file
+  become: yes
+  ansible.builtin.copy:
+    src: systemd/
+    dest: /etc/systemd/system/
+  notify: enable hibernate-after-suspend service

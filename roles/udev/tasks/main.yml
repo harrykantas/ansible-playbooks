@@ -1,0 +1,7 @@
+---
+
+- name: udev config
+  become: yes
+  ansible.builtin.copy:
+    src: rules.d/
+    dest: /etc/udev/rules.d/

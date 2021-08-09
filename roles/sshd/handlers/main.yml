@@ -6,4 +6,3 @@
     name: sshd
     state: started
     enabled: yes
-  when: services.sshd is defined

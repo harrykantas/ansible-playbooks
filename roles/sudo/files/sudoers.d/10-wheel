@@ -1,0 +1,2 @@
+%wheel ALL=(ALL) ALL
+%wheel ALL=(ALL) NOPASSWD: /usr/bin/makepkg,/usr/bin/pacman,/usr/bin/wakertc
