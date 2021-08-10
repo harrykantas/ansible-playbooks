@@ -42,6 +42,6 @@ packages:
       - xdg-user-dirs-gtk
     aur:
       - gnome-shell-extension-appindicator
-      - gnome-shell-extension-freon-git
-      - gnome-shell-extension-just-perfection-desktop-git
+      - gnome-shell-extension-freon
+      - gnome-shell-extension-just-perfection-desktop
       - gnome-shell-extension-remove-dropdown-arrows

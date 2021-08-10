@@ -5,10 +5,10 @@
     repo: "{{aur.yay_repo}}"
     dest: "{{aur.yay_dest}}"
 
-- name: check that {{aur.yay_dest}} exists
-  ansible.builtin.stat:
-    path: "{{aur.yay_dest}}"
-  register: yay_dir
+# - name: check that {{aur.yay_dest}} exists
+#   ansible.builtin.stat:
+#     path: "{{aur.yay_dest}}"
+#   register: yay_dir
 
 # - name: build and install yay
 #   ansible.builtin.shell: 

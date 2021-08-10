@@ -4,26 +4,17 @@
   hosts: archlinux
 
   roles:
+    - role: roles/kernel
+      when: kernel is defined
+      
     - role: roles/microcode
       when: cpu is defined
-
-    - role: roles/udev
-      when: install.udev is defined
-
-    - role: roles/resolved
-      when: install.resolved is defined
 
     - role: roles/sysctl
       when: install.sysctl is defined
 
-    - role: roles/sudo
-      when: install.sudo is defined
-
-    - role: roles/sshd
-      when: install.sshd is defined
-
-    - role: roles/suspend
-      when: install.suspend is defined
+    - role: roles/udev
+      when: install.udev is defined
 
     - role: roles/environment
       when: env_vars is defined
@@ -31,22 +22,38 @@
     - role: roles/vconsole
       when: fonts.vconsole is defined
 
+    - role: roles/sudo
+      when: install.sudo is defined
+
+    - role: roles/pacman
     - role: roles/packages
 
-    - role: roles/kernel
-    - role: roles/pacman
+    - role: roles/backup
+      when: install.ssh_config is defined
 
-    - role: roles/nextdns
-
-    - role: roles/flexo
-
-    - role: roles/wireguard
-      when: install.wireguard is defined
+    - role: roles/git
+      when: install.git is defined
 
     - role: roles/dotfiles
       when: install.dotfiles is defined
 
+    - role: roles/flexo
+      when: install.flexo_server is defined or install.flexo_client is defined
+
     - role: roles/gnome
       when: install.gnome is defined
 
-    - role: roles/git
+    - role: roles/resolved
+      when: install.resolved is defined
+
+    - role: roles/nextdns
+      when: install.nextdns_server is defined or install.nextdns_client is defined
+
+    - role: roles/sshd
+      when: install.sshd is defined
+
+    - role: roles/suspend
+      when: install.suspend is defined
+
+    - role: roles/wireguard
+      when: install.wireguard_peerA is defined or install.wireguard_peer is defined

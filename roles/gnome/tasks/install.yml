@@ -13,3 +13,7 @@
 
 # - name: install gnome packages from aur
 #   ansible.builtin.command: "{{aur.yay_cmd}} -S {{packages.gnome.aur}}"
+
+- name: git integration with gnome-keyring
+  ansible.builtin.command: git config --global credential.helper /usr/lib/git-core/git-credential-libsecret
+  when: install.git is defined

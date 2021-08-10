@@ -2,18 +2,18 @@
 
 - name: create modprobe.d/blacklist.conf
   become: yes
-  ansible.builtin.copy:
-    content: "{{item}}"
-    dest: /etc/modprobe.d/blacklist.conf
+  ansible.builtin.lineinfile:
+    path: /etc/modprobe.d/blacklist.conf
+    line: "{{item}}"
   with_items:
-    - "{{modules.blacklist}}"
-  when: modules.blacklist is defined
+    - "{{kernel.modules.blacklist}}"
+  when: kernel.modules.blacklist is defined
 
 - name: create modprobe.d/options.conf
   become: yes
-  ansible.builtin.copy:
-    content: "{{item}}"
-    dest: /etc/modprobe.d/options.conf
+  ansible.builtin.lineinfile:
+    path: /etc/modprobe.d/options.conf
+    line: "{{item}}"
   with_items:
-    - "{{modules.options}}"
-  when: modules.options is defined
+    - "{{kernel.modules.options}}"
+  when: kernel.modules.options is defined

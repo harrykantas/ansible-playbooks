@@ -2,18 +2,17 @@ cpu: intel
 
 kernel:
   params: "mem_sleep_default=deep"
-  modules: "vmd i915"
+  modules: 
+    install: "vmd i915"
+    blacklist:
+      - "blacklist pcspkr"
+    options:
+      - "options i915 enable_guc=2"
+      - "options iwlwifi power_save=1"
+      - "options iwlmvm power_scheme=3"
 
 fonts:
   vconsole: ter-i18n
-
-modules:
-  blacklist:
-    - "blacklist pcspkr"
-  options:
-    - "options i915 enable_guc=2"
-    - "options iwlwifi power_save=1"
-    - "options iwlmvm power_scheme=3"
 
 env_vars:
   - "LIBVA_DRIVER_NAME=iHD"
@@ -23,24 +22,25 @@ env_vars:
   - "MOZ_ENABLE_WAYLAND=1"
 
 install:
-  sudo:
-  sysctl:
-  udev:
-  resolved:
-  suspend:
   dotfiles:
-  sshd:
-  ssh_config:
-  wireguard:
-  gnome:
-  nextdns_client:
   extra_packages:
   flatpak_packages:
+  git:
+  gnome:
+  nextdns_client:
+  resolved:
+  ssh_config:
+  sudo:
+  suspend:
+  sysctl:
+  udev:
+  vconsole:
+  wireguard_peer:
 
 extra_packages:
   - acpi_call
   - flatpak
   - gst-libav
   - intel-media-driver
-  - vulkan-intel
   - libva-utils
+  - vulkan-intel

@@ -6,6 +6,7 @@
     remote_src: yes
     src: /etc/mkinitcpio.conf
     dest: /etc/mkinitcpio.conf.ans
+  when: kernel.modules.install is defined
 
 - name: modify mkinitcpio.conf
   become: yes
@@ -14,7 +15,7 @@
     regex: "{{item.from}}"
     line: "{{item.to}}"
   with_items:
-    - {from: "MODULES=()", to: "MODULES=({{kernel.modules}})"}
-  when: kernel.modules is defined
+    - {from: "MODULES=()", to: "MODULES=({{kernel.modules.install}})"}
+  when: kernel.modules.install is defined
   notify:
     - generate initramfs

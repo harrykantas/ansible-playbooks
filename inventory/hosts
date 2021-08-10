@@ -1,4 +1,3 @@
 [archlinux]
 ultraviolet	ansible_connection=local
 wire
-zooropa	ansible_connection=local
